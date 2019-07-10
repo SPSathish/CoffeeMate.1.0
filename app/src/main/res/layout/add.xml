@@ -44,7 +44,8 @@
             android:layout_above="@+id/footerLinearLayout"
             android:layout_centerHorizontal="true"
             android:drawableTop="@drawable/ic_save_todo"
-            android:text="@string/saveCoffeeBtn" />
+            android:text="@string/saveCoffeeBtn"
+            android:onClick="onClick"/>
 
         <RatingBar
             android:id="@+id/coffeeRatingBar"

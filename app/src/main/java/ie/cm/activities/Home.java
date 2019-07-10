@@ -8,11 +8,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import ie.cm.R;
 
 public class Home extends Base {
-
+   TextView recentList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +21,7 @@ public class Home extends Base {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setLogo(R.drawable.ic_launcher1);
+          recentList =findViewById(R.id.recentlyAddedListEmpty);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -35,6 +37,16 @@ public class Home extends Base {
             }
         });
     }
+
+
+    @Override
+    protected void onResume() { super.onResume();
+        if(!coffeeList.isEmpty()) recentList.setText(coffeeList.toString());
+        else
+            recentList.setText(getString(R.string.recentlyViewedListEmptyMessage));
+    }
+
+
     public void add(View v)
     {
         goToActivity(this,Add.class,null);

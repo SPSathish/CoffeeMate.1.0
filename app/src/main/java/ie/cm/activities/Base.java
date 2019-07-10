@@ -43,7 +43,9 @@ public class Base extends AppCompatActivity {
 		goToActivity(this, Home.class, null);
 	}
 
-
+	public void menuSettings(MenuItem m) {
+		goToActivity(this, Settings.class, null);
+	}
 
 	public void openInfoDialog(Activity current) {
 		Dialog dialog = new Dialog(current);

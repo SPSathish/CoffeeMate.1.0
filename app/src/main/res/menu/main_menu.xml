@@ -26,5 +26,11 @@
         app:showAsAction="ifRoom"
         android:onClick="menuHome"
         />
+    <item
+        android:orderInCategory="101"
+        android:title="Settings"
+        app:showAsAction="never"
+        android:onClick="menuSettings"
+        />
 
 </menu>
